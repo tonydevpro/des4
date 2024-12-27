@@ -1,94 +1,149 @@
-/* styles.css */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Configurações principais de layout */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Cor do texto mais clara */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    color: #333;
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Estilo do contêiner */
 .container {
-    background-color: #fff;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    width: 350px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #1e1e1e; /* Fundo escuro para o contêiner */
     padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
+/* Estilo do título */
 h1 {
-    font-size: 24px;
-    color: #4CAF50; /* Cor verde suave */
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    color: #76ff03; /* Cor verde fluorescente para o título */
+    margin-bottom: 30px;
+    font-weight: 700; /* Título mais pesado */
 }
 
+/* Estilo do parágrafo */
 p {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #555;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 2px solid #ccc;
+    font-size: 1.1rem;
+    color: #a1a1a1;
     margin-bottom: 20px;
-    outline: none;
-    transition: border-color 0.3s ease;
 }
 
-input:focus {
-    border-color: #4CAF50; /* Cor do foco verde */
+/* Estilo para o rótulo e input */
+label {
+    font-size: 1rem;
+    color: #ccc;
+    display: block;
+    margin-bottom: 10px;
 }
 
-button {
-    width: 100%;
+input[type="text"] {
+    width: 90%;
     padding: 12px;
-    font-size: 18px;
-    background-color: #4CAF50;
-    color: white;
+    font-size: 1.1rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    background-color: #333;
+    color: #e0e0e0;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background-color: #444;
+    border: 2px solid #76ff03; /* Destaque verde */
+}
+
+/* Estilo dos botões */
+button {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    background-color: #76ff03; /* Verde fluorescente */
+    color: #121212;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin: 10px 0;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
 button:hover {
-    background-color: #45a049; /* Cor do botão ao passar o mouse */
+    background-color: #64dd17; /* Cor de hover mais escura */
+    transform: translateY(-2px); /* Efeito de elevação */
 }
 
+button:active {
+    background-color: #43a047; /* Cor do botão ativo */
+    transform: translateY(0);
+}
+
+/* Estilo para a seção de resultados */
 #result {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f1f1f1;
-    border-radius: 8px;
+    margin-top: 30px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #444;
 }
 
 #result h2 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #76ff03;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-ul {
+/* Estilo da lista de números */
+#numberList {
     list-style-type: none;
     padding-left: 0;
+    font-size: 1.1rem;
+    color: #e0e0e0;
 }
 
-ul li {
-    font-size: 18px;
-    background-color: #e1f7d5;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 8px;
+#numberList li {
+    margin: 10px 0;
+    background-color: #444;
+    padding: 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+#numberList li:hover {
+    background-color: #555;
+    transform: translateX(5px); /* Desloca para a direita */
+}
+
+/* Estilo de erro ao inserir números inválidos */
+#errorMessage {
+    color: #f44336; /* Cor de erro vermelho */
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
